@@ -12,6 +12,20 @@ body {
   overflow: hidden;
   background-color: black;
 }
+
+#particles-js {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hoja:hover #particles-js{
+  display: inherit;
+}
+
 .hoja {
   color: white;
   position: absolute;
