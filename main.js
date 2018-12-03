@@ -1,3 +1,3 @@
-      $(document).ready(function(){
-        particlesJS.load('particles-js', 'particles.json', function() {
-      });
+$(document).ready(function(){
+  particlesJS.load('particles-js', 'js/particles.json', function() {
+});
