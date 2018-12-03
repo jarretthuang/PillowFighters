@@ -14,7 +14,6 @@ body {
 }
 
 #particles-js {
-    display: none;
     position: absolute;
     z-index: 100;
     top: 0;
@@ -23,7 +22,6 @@ body {
 }
 
 .hoja:hover #particles-js{
-  display: inherit;
 }
 
 .hoja {
