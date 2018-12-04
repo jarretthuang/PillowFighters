@@ -222,3 +222,13 @@ body {
     justify-self: center;
     grid-column: 2/3;
 }
+
+#by-me {
+    color: #bdbdbd;
+    font-family: 'Helvetica', "Arial", sans-serif;
+    font-size: 5px;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    font-weight: 100 !important;
+    align-self: end;
+}
