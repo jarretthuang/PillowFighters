@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     var random_boolean = Math.random() >= 0.5;
     if (random_boolean) {
@@ -17,7 +18,9 @@ $(document).ready(function(){
     
     function jsonParser(name) {
         var url = "https://api.silveress.ie/bns/v3/character/full/na/" + name;
+        showSpinner();
         $.getJSON(url, function(data) {
+            hideSpinner();
             if (isEmpty(data)) {
                 $("#char-lookup").html("Cannot find you on NA server!");
             } else {
@@ -41,6 +44,14 @@ $(document).ready(function(){
     
     function confirmationText(char) {
         return "LV" + char.playerLevel + " HM" + char.playerLevelHM + " " + char.playerClass + " is that you?";
+    }
+    
+    function showSpinner() {
+        $(".lds-hourglass").css("opacity", "0.8");
+    }
+    
+    function hideSpinner() {
+        $(".lds-hourglass").css("opacity", "0");
     }
     
 });

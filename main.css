@@ -244,3 +244,41 @@ body {
     font-size: 14px;
     padding: 0 10px 0 10px;
 }
+
+.lds-hourglass {
+  opacity: 0;
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  grid-column: 3/4;
+  align-self: center;
+  margin-left: -35px;
+  background-color: black;
+    border-radius: 50%;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 3px;
+  box-sizing: border-box;
+  border: 13px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
