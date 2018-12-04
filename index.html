@@ -7,9 +7,19 @@
     <title>PROTOCOL - Blade & Soul</title>
     <meta name="description" content="Official website for the clan Protocol of Blade & Soul.">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="main.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<!--
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+-->
   </head>
+    
   <body>
     <div class="hoja">
         <b></b>
@@ -17,5 +27,36 @@
         <div id="clan-name">PROTOCOL</div>
         <b></b>
     </div>
+    <div id="join-button" class="minimal-button">JOIN US</div>
+    <div id="application-form">
+    <form name="submit-to-google-sheet" id="da-form">
+        <span id="form-title">JOIN PROTOCOL!</span>
+        <input name="name" type="text" placeholder="What should we call you" required>
+        <input name="ign" type="text" placeholder="Your In-Game-Name" required>
+        <input name="discord" type="text" placeholder="Your discord (Name#1234)">
+        <div class="submit-button-wrapper"><button type="submit" class="minimal-button submit-button">Submit</button></div>
+    </form>
+</div>
+
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxVlhiHEopjDKGnBqLih-X5JtGx8qwzJ9dEE9drHlfzkYh2jtys/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        console.log('Success!', response);
+        $.modal.close();
+    })
+      .catch(error => {
+        console.error('Error!', error.message);
+        $.modal.close();
+    })
+  })
+</script>
+          
+
   </body>
 </html>

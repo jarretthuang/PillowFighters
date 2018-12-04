@@ -9,8 +9,11 @@ body {
   height: 100%;
 }
 body {
-  overflow: hidden;
-  background-color: black;
+    overflow: hidden;
+    background-color: black;
+    display: grid;
+    grid-template-rows: 1fr 350px 1fr;
+    grid-template-columns: 1fr min-content 1fr;
 }
 
 .hoja {
@@ -119,4 +122,103 @@ body {
 
 #clan-name {
     justify-self: center;
+}
+
+#application-form {
+    display: none;
+    background-color: black;
+    border: 1px white solid;
+}
+
+.minimal-button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    
+}
+
+#join-button {
+    align-self: start;
+    grid-column: 2 / 3;
+    grid-row: 3/ 4;
+    justify-self: center;
+}
+
+.minimal-button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+@media all and (max-width:30em) {
+ .minimal-button {
+     display: block;
+     margin: 0.4em auto;
+ }
+}
+
+.submit-button {
+    background-color: black;
+}
+
+#da-form input {
+    box-sizing: border-box;
+    padding: 0 40px 0 10px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    border-radius: 0.4em;
+    background: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: 0;
+    text-rendering: auto;
+    /* color: initial; */
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px "Open Sans";
+    grid-column: 2/3;
+}
+
+#form-title {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    align-self: center;
+    justify-self: center;
+    font-size: 25px;
+    grid-column: 2/3;
+    white-space: nowrap;
+    
+}
+
+#da-form {
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr min-content 1fr;
+}
+
+.submit-button-wrapper {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/3;
 }
