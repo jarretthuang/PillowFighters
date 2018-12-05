@@ -7,6 +7,8 @@ $(document).ready(function(){
     }
     
     $("#join-button").click(function() {
+        $(".submit-text").show();
+        $(".check-submit").hide();
         $("#application-form").modal({
             fadeDuration: 100
         });
@@ -16,9 +18,14 @@ $(document).ready(function(){
         jsonParser($("#ign-input").val());
     });
     
+    var previousLookupName = "";
+    
     function jsonParser(name) {
+        if (name == "" || name == previousLookupName) return;
         var url = "https://api.silveress.ie/bns/v3/character/full/na/" + name;
+        previousLookupName = name;
         showSpinner();
+    
         $.getJSON(url, function(data) {
             hideSpinner();
             if (isEmpty(data)) {

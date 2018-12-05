@@ -14,6 +14,8 @@ body {
     display: grid;
     grid-template-rows: 1fr 350px 1fr;
     grid-template-columns: 1fr min-content 1fr;
+    font-family: 'Helvetica', "Arial", sans-serif;
+    color: white;
 }
 
 .hoja {
@@ -168,9 +170,7 @@ body {
  }
 }
 
-.submit-button {
-    background-color: black;
-}
+
 
 #da-form input {
     box-sizing: border-box;
@@ -207,7 +207,7 @@ body {
     font-size: 25px;
     grid-column: 2/3;
     white-space: nowrap;
-    
+    user-select: none;
 }
 
 #da-form {
@@ -219,8 +219,9 @@ body {
 
 .submit-button-wrapper {
     align-self: center;
-    justify-self: center;
+    justify-self: end;
     grid-column: 2/3;
+    margin-top: 20px;
 }
 
 #by-me {
@@ -281,4 +282,33 @@ body {
   100% {
     transform: rotate(1800deg);
   }
+}
+
+.submit-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    justify-self: end;
+    user-select: none;
+    outline: none;
+}
+
+.check-submit {
+    width:45px;
+    display: none;
+}
+
+.submit-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    white-space: nowrap;
+    align-self: center;
+    color: white;
+    -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+}
+
+.submit-button:hover .submit-text {
+    color: #b0bec5;
 }
