@@ -116,14 +116,15 @@ body {
 }
 
 
-#crown {
+#pf-logo {
     width: 200px;
-    height: 130px;
     justify-self: center;
+    filter:invert(100%);
 }
 
 #clan-name {
     justify-self: center;
+    font-size: 20px;
 }
 
 #application-form {
